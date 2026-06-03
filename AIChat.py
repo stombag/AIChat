@@ -1,7 +1,20 @@
 from fastapi import FastAPI
 from openai import OpenAI
+from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 
 app = FastAPI()
+
+@app.get("/")
+async def home():
+    return HTMLResponse("""
+    <html>
+        <body>
+            <h1>RPG NPC 서버</h1>
+            <p>서버 실행 중</p>
+        </body>
+    </html>
+    """)
 
 client = OpenAI(
     base_url="http://127.0.0.1:1234/v1",
