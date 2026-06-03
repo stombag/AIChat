@@ -1,7 +1,6 @@
 from fastapi import FastAPI
-from openai import OpenAI
-from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
+from openai import OpenAI
 
 app = FastAPI()
 
@@ -21,7 +20,6 @@ client = OpenAI(
     api_key="lm-studio"
 )
 
-# NPC별 대화 기록 저장
 conversation_memory = {}
 
 
